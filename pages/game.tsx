@@ -5,10 +5,10 @@ import monitor from "../public/images/monitor.png";
 const Game = () => {
   return (
     <div
-      className={`bg-zinc-900 h-screen w-screen flex justify-center overflow-clip`}
+      className={`bg-zinc-900 h-screen w-screen flex justify-center overflow-clip select-none`}
     >
       <div
-        className={`max-w-screen-xl max-h-screen sm:w-4/5 lg:w-3/5 2xl:w-1/2 absolute bottom-5 overflow-clip`}
+        className={`max-w-screen-xl max-h-screen sm:w-10/12 lg:w-8/12 2xl:w-7/12 absolute bottom-5 overflow-clip`}
       >
         <Image src={monitor} alt="monitor" layout="responsive" />
         <div
