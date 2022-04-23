@@ -14,6 +14,7 @@ const Game = () => {
         className={`absolute select-none pointer-events-none`}
         layout="fill"
         objectFit="cover"
+        priority
       />
       <div
         className={`max-w-screen-xl max-h-screen sm:w-10/12 lg:w-8/12 2xl:w-7/12 absolute bottom-5 overflow-clip`}
