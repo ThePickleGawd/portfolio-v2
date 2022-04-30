@@ -2,8 +2,12 @@ import Image from "next/image";
 import GameViewer from "../components/Game/GameViewer";
 import monitor from "../public/images/monitor.png";
 import background from "../public/images/background.png";
+import GradiantButton from "../components/GradiantButton";
+import { useRouter } from "next/router";
 
 const Game = () => {
+  const router = useRouter();
+
   return (
     <div
       className={`bg-zinc-900 h-screen w-screen flex justify-center overflow-clip select-none`}
@@ -16,6 +20,9 @@ const Game = () => {
         objectFit="cover"
         priority
       />
+      <div className={`absolute left-6 top-5`}>
+        <GradiantButton onClick={() => router.push("/")}>Back</GradiantButton>
+      </div>
       <div
         className={`max-w-screen-xl max-h-screen sm:w-10/12 lg:w-8/12 2xl:w-7/12 absolute bottom-5 overflow-clip`}
       >
