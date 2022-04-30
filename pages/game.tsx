@@ -1,5 +1,5 @@
 import Image from "next/image";
-import GameViewer from "../components/Home/Game/GameViewer";
+import GameViewer from "../components/Game/GameViewer";
 import monitor from "../public/images/monitor.png";
 import background from "../public/images/background.png";
 

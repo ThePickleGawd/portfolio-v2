@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import type { NextPage } from "next";
+import Title from "../components/Home/Title";
 
 /*
 
@@ -11,11 +12,8 @@ If you're in a hurry, it can also be unlocked by typing "Dylan is the most sexy 
 const Home: NextPage = () => {
   return (
     <div className={`bg-black h-screen w-screen`}>
-      <div
-        className={`w-screen h-screen flex flex-col space-y-4 items-center justify-center`}
-      >
-        <div className={`text-white text-8xl`}>{"Dylan Lu"}</div>
-        <div className={`text-white text-3xl`}>{"<Developer/>"}</div>
+      <div className={`flex `}>
+        <Title />
       </div>
     </div>
   );

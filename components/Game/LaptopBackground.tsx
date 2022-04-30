@@ -2,7 +2,7 @@ import { MutableRefObject, RefObject, useRef } from "react";
 import Lottie, { LottieRef, LottieRefCurrentProps } from "lottie-react";
 
 // Animation
-import laptopAnimation from "../../../public/animations/laptop2.json";
+import laptopAnimation from "../../public/animations/laptop2.json";
 
 const LaptopBackground = ({
   lottieRef,
