@@ -5,6 +5,8 @@ import Image from "next/image";
 import football from "../public/images/football03.png";
 import GradiantButton from "../components/GradiantButton";
 import { useRouter } from "next/router";
+import background from "../public/images/background.png";
+import Particles from "react-tsparticles";
 
 /*
 
