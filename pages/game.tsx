@@ -2,6 +2,7 @@ import Image from "next/image";
 import GameViewer from "../components/Game/GameViewer";
 import monitor from "../public/images/monitor.png";
 import background from "../public/images/background.png";
+import background4k from "../public/images/background-4k.png";
 import GradiantButton from "../components/GradiantButton";
 import { useRouter } from "next/router";
 
@@ -13,7 +14,7 @@ const Game = () => {
       className={`bg-zinc-900 h-screen w-screen flex justify-center overflow-clip select-none`}
     >
       <Image
-        src={background}
+        src={background4k}
         alt="background"
         className={`absolute select-none pointer-events-none`}
         layout="fill"

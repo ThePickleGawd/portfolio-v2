@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export const WiggleText = ({ text }: { text: string }) => {
   return (
-    <div className={`flex`}>
+    <div className={`flex relative`}>
       {React.Children.toArray(
         text.split("").map((x, i) => <WiggleLetter key={i} letter={x} />)
       )}
