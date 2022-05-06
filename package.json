@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "easing-utils": "^0.0.7",
     "lottie-react": "^2.2.1",
     "next": "12.1.0",
     "react": "17.0.2",

@@ -5,10 +5,11 @@ import Image from "next/image";
 import football from "../public/images/football03.png";
 import GradiantButton from "../components/GradiantButton";
 import { useRouter } from "next/router";
-import background from "../public/images/Dylan.png";
 import Particles from "react-tsparticles";
 import test from "../public/images/test.svg";
 import aura from "../public/images/aura.png";
+import Aura from "../components/Home/Aura";
+import Dylan from "../components/Home/Dylan";
 
 /*
 
@@ -22,21 +23,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={`bg-[#1D1D1D] h-screen w-screen`}>
-      <Test />
-      <Image
-        src={aura}
-        alt=""
-        layout="fill"
-        objectFit="cover"
-        className="select-none"
-      />
-      <Image
-        src={background}
-        alt=""
-        layout="fill"
-        objectFit="scale-down"
-        className="select-none"
-      />
+      <Dylan />
       <div className={`pl-24 pt-24`}>
         <WiggleText text="Hello!" />
         <WiggleText text="I'm Dylan" />
@@ -52,14 +39,6 @@ const Home: NextPage = () => {
           </GradiantButton>
         </div>
       </div>
-    </div>
-  );
-};
-
-const Test = () => {
-  return (
-    <div>
-      <div className={`grid`}></div>
     </div>
   );
 };
