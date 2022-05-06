@@ -9,7 +9,7 @@ const Dylan = ({ superSaiyan }: { superSaiyan: boolean }) => {
   // TODO: blender render the dylan into the aura
 
   return (
-    <div>
+    <div className={`relative w-screen h-screen`}>
       <Image
         src={dylanFaded}
         alt=""
