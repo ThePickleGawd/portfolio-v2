@@ -25,22 +25,10 @@ const Home: NextPage = () => {
 
   const [scrollTop, setScrollTop] = useState(0);
 
-  const superSaiyan = () => scrollTop != 0;
-
-  useEffect(() => {
-    parallaxRef.current?.container.current.addEventListener("scroll", () =>
-      setScrollTop(parallaxRef.current?.container.current.scrollTop)
-    );
-  }, [parallaxRef]);
-
   return (
-    <Parallax
-      pages={3}
-      className={`bg-slate-300 ${superSaiyan() && "animate-shake"} relative`}
-      ref={parallaxRef}
-    >
-      <ParallaxLayer speed={1} className={`-z-30 bg-[#1D1D1D]`}></ParallaxLayer>
-      <ParallaxLayer speed={1} className={`z-20`}>
+    <Parallax pages={3} className={`bg-slate-300 relative`} ref={parallaxRef}>
+      <ParallaxLayer speed={1.5} className={`bg-[#1D1D1D]`}></ParallaxLayer>
+      <ParallaxLayer speed={1}>
         <div className={`pl-24 pt-24`}>
           <WiggleText text="Hello!" />
           <WiggleText text="I'm Dylan" />
@@ -56,9 +44,6 @@ const Home: NextPage = () => {
             </GradiantButton>
           </div>
         </div>
-      </ParallaxLayer>
-      <ParallaxLayer sticky={{ start: 0, end: 3 }} className={`z-0`}>
-        <Dylan superSaiyan={superSaiyan()} />
       </ParallaxLayer>
     </Parallax>
   );
