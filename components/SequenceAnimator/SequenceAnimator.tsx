@@ -2,6 +2,7 @@
 
 import React from "react";
 import { ease } from "./common";
+import { Easing } from "./common.types";
 import {
   SequenceAnimatorProps,
   SequenceAnimatorState,
@@ -19,8 +20,8 @@ export default class SequenceAnimator extends React.Component<
     easing: "linear",
     loop: true,
   };
-  private _animationFrame: ReturnType<typeof requestAnimationFrame>;
-  private _animationStart: number | null;
+  private _animationFrame: ReturnType<typeof requestAnimationFrame> | undefined;
+  private _animationStart: number | null | undefined;
 
   state = {
     frame: 0,
@@ -35,7 +36,7 @@ export default class SequenceAnimator extends React.Component<
   }
 
   componentWillUnmount() {
-    cancelAnimationFrame(this._animationFrame);
+    cancelAnimationFrame(this._animationFrame as number);
   }
 
   start() {
@@ -43,7 +44,7 @@ export default class SequenceAnimator extends React.Component<
   }
 
   stop() {
-    cancelAnimationFrame(this._animationFrame);
+    cancelAnimationFrame(this._animationFrame as number);
   }
 
   reset() {
@@ -95,11 +96,11 @@ export default class SequenceAnimator extends React.Component<
     }
 
     let nextFrame = Math.floor(
-      ease(easing)(
+      ease(easing as Easing)(
         timestamp - this._animationStart,
         0,
         childrenArr.length,
-        duration
+        duration as number
       )
     );
 

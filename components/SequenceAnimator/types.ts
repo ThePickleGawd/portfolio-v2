@@ -1,4 +1,4 @@
-import { Easing } from "../common.types";
+import { Easing } from "./common.types";
 
 export type SequenceAnimatorProps = {
   autoplay?: boolean;
