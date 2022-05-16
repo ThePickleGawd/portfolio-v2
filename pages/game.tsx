@@ -34,19 +34,14 @@ const Game = () => {
       <div
         className={`max-w-screen-xl max-h-screen inline-block sm:w-8/12 lg:w-7/12 2xl:w-7/12 absolute bottom-5 overflow-clip mb-1`}
       >
-        <Image
-          src={monitor}
-          alt="monitor"
-          layout="responsive"
-          placeholder="blur"
-        />
+        <Image src={monitor} alt="monitor" layout="responsive" />
         <div
           className={`absolute w-full h-full top-0 pt-[3.89%] pl-[3.82%] pr-[4.1%] pb-[28%]`}
         >
           <GameViewer />
         </div>
         <div
-          className={`sm:w-[86px] sm:h-[95px] md:w-[107px] md:h-[119px] absolute sm:bottom-9 md:bottom-13 lg:bottom-15 right-0`}
+          className={`sm:w-[86px] sm:h-[95px] md:w-[107px] md:h-[119px] xl:w-[160px] xl:h-[178px] absolute md:bottom-[8%] xl:bottom-[10%] right-0`}
           onMouseOver={() => setHintHover(true)}
           onMouseLeave={() => setHintHover(false)}
           onClick={() => setHintOpen(true)}

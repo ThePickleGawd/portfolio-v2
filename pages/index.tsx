@@ -23,8 +23,6 @@ const Home: NextPage = () => {
   const router = useRouter();
   const parallaxRef = useRef<IParallax>(null);
 
-  const [scrollTop, setScrollTop] = useState(0);
-
   return (
     <Parallax pages={3} className={`bg-slate-300 relative`} ref={parallaxRef}>
       <ParallaxLayer speed={1.5} className={`bg-[#1D1D1D]`}></ParallaxLayer>
