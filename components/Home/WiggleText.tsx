@@ -18,7 +18,7 @@ const WiggleLetter = ({ letter }: { letter: string }) => {
 
   return (
     <div
-      className={`text-white text-8xl font-semibold hover:text-sky-400 select-none ${
+      className={`text-cyan-50 text-8xl font-semibold hover:text-sky-400 select-none ${
         wiggle && "animate-wiggle"
       }`}
       onMouseOver={() => setWiggle(true)}

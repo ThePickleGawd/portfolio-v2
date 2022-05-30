@@ -24,7 +24,11 @@ const Home: NextPage = () => {
   const parallaxRef = useRef<IParallax>(null);
 
   return (
-    <Parallax pages={3} className={`bg-slate-300 relative`} ref={parallaxRef}>
+    <Parallax
+      pages={2}
+      className={`bg-cyan-50 relative dark`}
+      ref={parallaxRef}
+    >
       <ParallaxLayer speed={1.5} className={`bg-[#1D1D1D]`}></ParallaxLayer>
       <ParallaxLayer speed={1}>
         <div className={`pl-24 pt-24`}>
@@ -41,6 +45,21 @@ const Home: NextPage = () => {
               Game
             </GradiantButton>
           </div>
+        </div>
+      </ParallaxLayer>
+      <ParallaxLayer speed={0.5} offset={1} className={``}>
+        <div className={`flex justify-around w-full h-full pt-[5%]`}>
+          <div className={``}>
+            <div className={`text-2xl`}>Notable Projects</div>
+            <div className={`grid grid-cols-5 grid-rows-2`}>
+              <div>TEST</div>
+              <div>TEST</div>
+              <div>TEST</div>
+              <div>TEST</div>
+              <div>TEST</div>
+            </div>
+          </div>
+          <div>Rap Videos</div>
         </div>
       </ParallaxLayer>
     </Parallax>
