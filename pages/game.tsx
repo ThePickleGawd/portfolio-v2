@@ -17,7 +17,7 @@ const Game = () => {
 
   return (
     <div
-      className={`bg-zinc-900 h-screen w-screen flex justify-center overflow-clip select-none`}
+      className={`bg-zinc-900 h-screen w-screen flex justify-center overflow-clip select-none dark`}
     >
       <Image
         src={background4k}
