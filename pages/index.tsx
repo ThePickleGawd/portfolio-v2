@@ -11,6 +11,7 @@ import aura from "../public/images/aura.png";
 import Aura from "../components/Home/Aura";
 import Dylan from "../components/Home/Dylan";
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
+import ProjectCard from "../components/Home/ProjectCard";
 
 /*
 
@@ -32,11 +33,14 @@ const Home: NextPage = () => {
       <ParallaxLayer speed={1.5} className={`bg-[#1D1D1D]`}></ParallaxLayer>
       <ParallaxLayer speed={1}>
         <div className={`pl-24 pt-24`}>
-          <WiggleText text="Hello!" />
-          <WiggleText text="I'm Dylan" />
-          <div
-            className={`my-5 text-xl  text-gray-400`}
-          >{`A student developer`}</div>
+          <WiggleText text="Hello!" fontSize="8xl" />
+          <WiggleText text="I'm Dylan" fontSize="8xl" />
+          <WiggleText
+            text="A student developer"
+            classOverrides={`my-5`}
+            letterClassOverrides={`text-slate-400 hover:text-red-400`}
+            fontSize="xl"
+          />
           <div className={`flex space-x-2`}>
             <GradiantButton onClick={() => router.push("/resume")}>
               Resume
@@ -48,18 +52,15 @@ const Home: NextPage = () => {
         </div>
       </ParallaxLayer>
       <ParallaxLayer speed={0.5} offset={1} className={``}>
-        <div className={`flex justify-around w-full h-full pt-[5%]`}>
-          <div className={``}>
-            <div className={`text-2xl`}>Notable Projects</div>
-            <div className={`grid grid-cols-5 grid-rows-2`}>
-              <div>TEST</div>
-              <div>TEST</div>
-              <div>TEST</div>
-              <div>TEST</div>
-              <div>TEST</div>
-            </div>
+        <div className={`w-full h-full p-10`}>
+          <div className={`text-7xl font-semibold`}>Notable Projects</div>
+          <div className={`grid gap-4 lg:grid-cols-3 md:grid-cols-2 pt-5`}>
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
           </div>
-          <div>Rap Videos</div>
         </div>
       </ParallaxLayer>
     </Parallax>
