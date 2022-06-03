@@ -36,7 +36,7 @@ const Home: NextPage = () => {
           <WiggleText text="Hello!" fontSize="8xl" />
           <WiggleText text="I'm Dylan" fontSize="8xl" />
           <WiggleText
-            text="A student developer"
+            text="A student develope"
             classOverrides={`my-5`}
             letterClassOverrides={`text-slate-400 hover:text-red-400`}
             fontSize="xl"
