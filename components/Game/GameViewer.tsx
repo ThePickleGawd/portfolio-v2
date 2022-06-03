@@ -11,7 +11,7 @@ export const unityContext = new UnityContext({
 const GameViewer = () => {
   useEffect(() => {
     return () => {
-      //unityContext.removeAllEventListeners();
+      unityContext.removeAllEventListeners();
     };
   }, []);
 

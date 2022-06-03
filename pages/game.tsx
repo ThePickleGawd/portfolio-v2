@@ -1,5 +1,4 @@
 import Image from "next/image";
-import GameViewer from "../components/Game/GameViewer";
 import monitor from "../public/images/monitor.png";
 import postit from "../public/images/post-it.png";
 import postitHover from "../public/images/post-it-hover.png";
@@ -9,6 +8,11 @@ import GradiantButton from "../components/GradiantButton";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import HintPopover from "../components/Game/HintPopover";
+import dynamic from "next/dynamic";
+
+const GameViewer = dynamic(() => import("../components/Game/GameViewer"), {
+  ssr: false,
+});
 
 const Game = () => {
   const router = useRouter();
