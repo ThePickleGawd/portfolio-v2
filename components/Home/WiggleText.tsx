@@ -1,19 +1,22 @@
 import React, { useState } from "react";
+import classnames from "classnames";
 
 interface WiggleTextProps {
   text: string;
   fontSize?:
-    | "sm"
-    | "md"
-    | "lg"
-    | "xl"
-    | "2xl"
-    | "3xl"
-    | "4xl"
-    | "5xl"
-    | "6xl"
-    | "7xl"
-    | "8xl";
+    | "text-sm"
+    | "text-md"
+    | "text-lg"
+    | "text-xl"
+    | "text-2xl"
+    | "text-3xl"
+    | "text-4xl"
+    | "text-5xl"
+    | "text-6xl"
+    | "text-7xl"
+    | "text-8xl";
+  textColor?: string;
+  hoverColor?: string;
   classOverrides?: string;
   letterClassOverrides?: string;
 }
@@ -22,10 +25,14 @@ export const WiggleText = ({
   text,
   classOverrides = "",
   letterClassOverrides = "",
-  fontSize = "lg",
+  fontSize = "text-lg",
+  textColor = "text-cyan-50",
+  hoverColor = "text-sky-400",
 }: WiggleTextProps) => {
+  const classStr = classnames("flex relative flex-wrap", classOverrides);
+
   return (
-    <div className={`flex relative flex-wrap ${classOverrides}`}>
+    <div className={classStr}>
       {React.Children.toArray(
         text
           .split("")
@@ -35,6 +42,8 @@ export const WiggleText = ({
               letter={x}
               classOverrides={letterClassOverrides}
               fontSize={fontSize}
+              textColor={textColor}
+              hoverColor={hoverColor}
             />
           ))
       )}
@@ -46,21 +55,32 @@ const WiggleLetter = ({
   letter,
   classOverrides,
   fontSize,
+  textColor,
+  hoverColor,
 }: {
   letter: string;
   classOverrides: string;
   fontSize: string;
+  textColor: string;
+  hoverColor: string;
 }) => {
   const [wiggle, setWiggle] = useState(false);
 
-  if (letter == " ")
-    return <div className={`text-${fontSize} select-none`}>&nbsp;</div>;
+  const letterClassStr = classnames(
+    `font-semibold select-none`,
+    { "animate-wiggle": wiggle },
+    { [`${fontSize}`]: true },
+    { [`${textColor}`]: true },
+    { [`hover:${hoverColor}`]: true },
+    { [`${classOverrides}`]: true }
+  );
+  const emptyClassStr = classnames(`select-none`, `${fontSize}`);
+
+  if (letter == " ") return <div className={emptyClassStr}>&nbsp;</div>;
 
   return (
     <div
-      className={`text-cyan-50 text-${fontSize} font-semibold hover:text-sky-400 select-none ${
-        wiggle && "animate-wiggle"
-      } ${classOverrides}`}
+      className={letterClassStr}
       onMouseOver={() => setWiggle(true)}
       onAnimationEnd={() => setWiggle(false)}
     >

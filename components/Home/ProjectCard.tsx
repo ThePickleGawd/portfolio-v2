@@ -7,13 +7,13 @@ const ProjectCard = () => {
       <div className="p-5">
         <WiggleText
           text={`Gunncoin`}
-          fontSize="xl"
-          letterClassOverrides="text-black"
+          fontSize="text-xl"
+          textColor="text-black"
         />
         <WiggleText
           text={`Decentralized project that ls;akdjf;lsdjf;lskj ;lskjd;lfjs;ldfj`}
-          fontSize="lg"
-          letterClassOverrides="text-slate-500"
+          fontSize="text-lg"
+          textColor="text-slate-500"
         />
       </div>
     </div>

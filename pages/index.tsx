@@ -33,13 +33,15 @@ const Home: NextPage = () => {
       <ParallaxLayer speed={1.5} className={`bg-[#1D1D1D]`}></ParallaxLayer>
       <ParallaxLayer speed={1}>
         <div className={`pl-24 pt-24`}>
-          <WiggleText text="Hello!" fontSize="8xl" />
-          <WiggleText text="I'm Dylan" fontSize="8xl" />
+          <WiggleText text="Hello!" fontSize="text-8xl" />
+          <WiggleText text="I'm Dylan" fontSize="text-8xl" />
           <WiggleText
             text="A student developer"
             classOverrides={`my-5`}
-            letterClassOverrides={`text-slate-400 hover:text-red-400`}
-            fontSize="xl"
+            letterClassOverrides={``}
+            textColor="text-slate-400"
+            hoverColor="text-red-400"
+            fontSize="text-xl"
           />
           <div className={`flex space-x-2`}>
             <GradiantButton onClick={() => router.push("/resume")}>
