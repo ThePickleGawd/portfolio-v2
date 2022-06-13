@@ -12,6 +12,10 @@ import Aura from "../components/Home/Aura";
 import Dylan from "../components/Home/Dylan";
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import ProjectCard from "../components/Home/ProjectCard";
+import Head from "next/head";
+
+import cpp from "../public/images/skills/cpp.png";
+import FadeInSection from "../components/FadeInSection";
 
 /*
 
@@ -26,21 +30,31 @@ const Home: NextPage = () => {
 
   return (
     <Parallax
-      pages={2}
+      pages={4}
       className={`bg-cyan-50 relative dark`}
       ref={parallaxRef}
     >
-      <ParallaxLayer speed={1.5} className={`bg-[#1D1D1D]`}></ParallaxLayer>
+      <Head>
+        <title>Dylan Lu | Portfolio V2</title>
+        <meta
+          name="description"
+          content="The second iteration of my portfolio"
+        />
+      </Head>
+      <ParallaxLayer speed={1.5} className={`bg-[#141717]`}></ParallaxLayer>
       <ParallaxLayer speed={1}>
-        <div className={`pl-24 pt-24`}>
-          <WiggleText text="Hello!" fontSize="text-8xl" />
-          <WiggleText text="I'm Dylan" fontSize="text-8xl" />
+        <div className={`flex flex-col items-center h-full justify-center`}>
           <WiggleText
-            text="A student developer"
-            classOverrides={`my-5`}
-            letterClassOverrides={``}
+            text="Dylan Lu"
+            fontSize="text-9xl"
+            textColor="text-cyan-50"
+            letterClassOverrides="hover:text-sky-400 font-extrabold"
+          />
+          <WiggleText
+            text="A student developer and engineer"
+            classOverrides={`mt-10 mb-5`}
+            letterClassOverrides={`hover:text-red-400`}
             textColor="text-slate-400"
-            hoverColor="text-red-400"
             fontSize="text-xl"
           />
           <div className={`flex space-x-2`}>
@@ -53,18 +67,43 @@ const Home: NextPage = () => {
           </div>
         </div>
       </ParallaxLayer>
-      <ParallaxLayer speed={0.5} offset={1} className={``}>
+      <ParallaxLayer offset={1} speed={0.5} factor={0.1}>
+        <ParallaxLayer horizontal offset={0} speed={-0.5} factor={1}>
+          <div className={`text-8xl text-gray-500 font-extrabold`}>
+            {"Things I'm crazy at..."}
+          </div>
+        </ParallaxLayer>
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={1.9}
+        speed={2}
+        factor={3.5}
+        className={"bg-gray-900"}
+      ></ParallaxLayer>
+      <ParallaxLayer offset={2} speed={0.2}>
+        <div className={`text-8xl text-red-400 font-extrabold mt-10 ml-20`}>
+          Coding!
+        </div>
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={2}
+        speed={0.2}
+        className={`flex justify-end items-center`}
+      >
+        <Image src={cpp} alt="cpp" width={250} height={275} className="" />
+      </ParallaxLayer>
+      {/* <ParallaxLayer speed={0.5} offset={3} factor={2}>
         <div className={`w-full h-full p-10`}>
           <div className={`text-7xl font-semibold`}>Notable Projects</div>
-          <div className={`grid gap-4 lg:grid-cols-3 md:grid-cols-2 pt-5`}>
-            <ProjectCard />
-            <ProjectCard />
+          <div
+            className={`grid gap-4 xl:grid-cols-3 lg:grid-cols-1 lg:pt-5 xl:pt-20`}
+          >
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
           </div>
         </div>
-      </ParallaxLayer>
+      </ParallaxLayer> */}
     </Parallax>
   );
 };

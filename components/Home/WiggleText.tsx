@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classnames from "classnames";
 
 interface WiggleTextProps {
@@ -14,9 +14,9 @@ interface WiggleTextProps {
     | "text-5xl"
     | "text-6xl"
     | "text-7xl"
-    | "text-8xl";
+    | "text-8xl"
+    | "text-9xl";
   textColor?: string;
-  hoverColor?: string;
   classOverrides?: string;
   letterClassOverrides?: string;
 }
@@ -27,7 +27,6 @@ export const WiggleText = ({
   letterClassOverrides = "",
   fontSize = "text-lg",
   textColor = "text-cyan-50",
-  hoverColor = "text-sky-400",
 }: WiggleTextProps) => {
   const classStr = classnames("flex relative flex-wrap", classOverrides);
 
@@ -43,7 +42,6 @@ export const WiggleText = ({
               classOverrides={letterClassOverrides}
               fontSize={fontSize}
               textColor={textColor}
-              hoverColor={hoverColor}
             />
           ))
       )}
@@ -56,23 +54,20 @@ const WiggleLetter = ({
   classOverrides,
   fontSize,
   textColor,
-  hoverColor,
 }: {
   letter: string;
   classOverrides: string;
   fontSize: string;
   textColor: string;
-  hoverColor: string;
 }) => {
   const [wiggle, setWiggle] = useState(false);
 
   const letterClassStr = classnames(
+    { [`${classOverrides}`]: true },
     `font-semibold select-none`,
     { "animate-wiggle": wiggle },
     { [`${fontSize}`]: true },
-    { [`${textColor}`]: true },
-    { [`hover:${hoverColor}`]: true },
-    { [`${classOverrides}`]: true }
+    { [`${textColor}`]: true }
   );
   const emptyClassStr = classnames(`select-none`, `${fontSize}`);
 

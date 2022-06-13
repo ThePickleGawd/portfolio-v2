@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import HintPopover from "../components/Game/HintPopover";
 import dynamic from "next/dynamic";
+import Head from "next/head";
 
 const GameViewer = dynamic(() => import("../components/Game/GameViewer"), {
   ssr: false,
@@ -23,6 +24,13 @@ const Game = () => {
     <div
       className={`bg-zinc-900 h-screen w-screen flex justify-center overflow-clip select-none dark`}
     >
+      <Head>
+        <title>The Legend of Dylan</title>
+        <meta
+          name="description"
+          content="An amazing game about Dylan. Made by Dylan"
+        />
+      </Head>
       <Image
         src={background4k}
         alt="background"
