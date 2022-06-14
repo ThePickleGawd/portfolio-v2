@@ -63,11 +63,11 @@ const WiggleLetter = ({
   const [wiggle, setWiggle] = useState(false);
 
   const letterClassStr = classnames(
-    { [`${classOverrides}`]: true },
-    `font-semibold select-none`,
+    `select-none`,
     { "animate-wiggle": wiggle },
     { [`${fontSize}`]: true },
-    { [`${textColor}`]: true }
+    { [`${textColor}`]: true },
+    { [`${classOverrides}`]: true }
   );
   const emptyClassStr = classnames(`select-none`, `${fontSize}`);
 
