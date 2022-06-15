@@ -13,10 +13,15 @@ import Head from "next/head";
 import cpp from "../public/images/skills/cpp.png";
 import c from "../public/images/skills/c.png";
 import javascript from "../public/images/skills/javascript.png";
+import typescript from "../public/images/skills/typescript.png";
 import python from "../public/images/skills/python.png";
 import next from "../public/images/skills/next.png";
 import react from "../public/images/skills/react.png";
 import unity from "../public/images/skills/unity.png";
+import cs from "../public/images/skills/cs.png";
+import java from "../public/images/skills/java.png";
+import rpi from "../public/images/skills/rpi.svg";
+import vim from "../public/images/skills/vim.png";
 
 /*
 
@@ -31,7 +36,7 @@ const Home: NextPage = () => {
 
   return (
     <Parallax
-      pages={4}
+      pages={6}
       className={`bg-cyan-50 relative dark`}
       ref={parallaxRef}
     >
@@ -84,7 +89,7 @@ const Home: NextPage = () => {
       <ParallaxLayer
         offset={1.9}
         speed={2}
-        factor={5}
+        factor={5.5}
         className={"bg-gray-900"}
       ></ParallaxLayer>
       <ParallaxLayer offset={2} speed={0.7}>
@@ -97,8 +102,8 @@ const Home: NextPage = () => {
         speed={2.5}
         className={`flex justify-center items-center`}
       >
-        <div className="translate-x-20">
-          <Image src={c} alt="c" width={170} height={180} />
+        <div className="translate-x-[100px] translate-y-[80px]">
+          <Image src={c} alt="c" width={250} height={260} />
         </div>
       </ParallaxLayer>
       <ParallaxLayer
@@ -106,18 +111,39 @@ const Home: NextPage = () => {
         speed={1.2}
         className={`flex justify-center items-center`}
       >
-        <div className="-translate-x-20">
-          <Image src={cpp} alt="cpp" width={150} height={165} />
+        <div className="-translate-x-[140px]">
+          <Image src={cpp} alt="cpp" width={175} height={200} />
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={1.2} className={``}>
-        <div className="absolute left-80 bottom-96">
+        <div className="absolute left-80 bottom-[475px] hover:bg-blue-500">
           <Image src={react} alt="react" width={200} height={200} />
         </div>
       </ParallaxLayer>
-      <ParallaxLayer offset={2} speed={0.5} className={``}>
-        <div className="absolute left-1 bottom-64">
+      <ParallaxLayer offset={2} speed={0.8} className={``}>
+        <div className="absolute left-1 bottom-[220px]">
           <Image src={next} alt="next" width={400} height={200} />
+        </div>
+      </ParallaxLayer>
+      <ParallaxLayer offset={2} speed={1.5} className={``}>
+        <div className="absolute left-10 bottom-[450px]">
+          <Image src={javascript} alt="javascript" width={175} height={175} />
+        </div>
+      </ParallaxLayer>
+      <ParallaxLayer offset={2} speed={0.8} className={``}>
+        <div className="absolute left-96 bottom-[220px]">
+          <Image src={typescript} alt="typescript" width={175} height={175} />
+        </div>
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={2} speed={1.2} className={``}>
+        <div className="absolute right-64 bottom-96">
+          <Image src={unity} alt="unity" width={400} height={400} />
+        </div>
+      </ParallaxLayer>
+      <ParallaxLayer offset={2} speed={0.75} className={``}>
+        <div className="absolute right-1 bottom-64">
+          <Image src={cs} alt="cs" width={350} height={350} />
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={1.2} className={``}>
@@ -143,7 +169,7 @@ const Home: NextPage = () => {
       </ParallaxLayer>
       <ParallaxLayer
         offset={2.9}
-        speed={0.7}
+        speed={0.6}
         className={`flex flex-col justify-center`}
       >
         <div
@@ -152,18 +178,26 @@ const Home: NextPage = () => {
           And so much more!
         </div>
       </ParallaxLayer>
-      {/* <ParallaxLayer speed={0.5} offset={3} factor={2}>
-        <div className={`w-full h-full p-10`}>
-          <div className={`text-7xl font-semibold`}>Notable Projects</div>
-          <div
-            className={`grid gap-4 xl:grid-cols-3 lg:grid-cols-1 lg:pt-5 xl:pt-20`}
-          >
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-          </div>
+      <ParallaxLayer offset={3} speed={1.25} className={`flex justify-center`}>
+        <div className="translate-x-10 translate-y-5">
+          <Image src={python} alt="python" width={250} height={250} />
         </div>
-      </ParallaxLayer> */}
+      </ParallaxLayer>
+      <ParallaxLayer offset={3} speed={1.4} className={`flex justify-center`}>
+        <div className="-translate-x-64 -translate-y-32">
+          <Image src={java} alt="java" width={250} height={250} />
+        </div>
+      </ParallaxLayer>
+      <ParallaxLayer offset={3} speed={1.2} className={`flex justify-center`}>
+        <div className="translate-x-80 -translate-y-52">
+          <Image src={rpi} alt="rpi" width={200} height={260} />
+        </div>
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={5}
+        speed={2}
+        className={`bg-gray-900`}
+      ></ParallaxLayer>
     </Parallax>
   );
 };
