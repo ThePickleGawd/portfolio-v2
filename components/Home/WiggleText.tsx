@@ -49,7 +49,36 @@ export const WiggleText = ({
   );
 };
 
-const WiggleLetter = ({
+export const WiggleParagraph = ({
+  text,
+  classOverrides = "",
+  letterClassOverrides = "",
+  fontSize = "text-lg",
+  textColor = "text-cyan-50",
+}: WiggleTextProps) => {
+  const classStr = classnames("flex relative flex-wrap", classOverrides);
+
+  return (
+    <div className={classStr}>
+      {React.Children.toArray(
+        text
+          .split("")
+          .filter((x, i, arr) => !(x === " " && arr[i - 1] === " "))
+          .map((x, i) => (
+            <WiggleLetter
+              key={i}
+              letter={x}
+              classOverrides={letterClassOverrides}
+              fontSize={fontSize}
+              textColor={textColor}
+            />
+          ))
+      )}
+    </div>
+  );
+};
+
+export const WiggleLetter = ({
   letter,
   classOverrides,
   fontSize,

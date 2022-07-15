@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import type { NextPage } from "next";
-import WiggleText from "../components/Home/WiggleText";
+import WiggleText, { WiggleParagraph } from "../components/Home/WiggleText";
 import Image from "next/image";
 import football from "../public/images/football03.png";
 import GradiantButton from "../components/GradiantButton";
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
 
   return (
     <Parallax
-      pages={6}
+      pages={12}
       className={`bg-cyan-50 relative dark `}
       ref={parallaxRef}
     >
@@ -83,7 +83,7 @@ const Home: NextPage = () => {
       <ParallaxLayer offset={1} speed={0.5} factor={0.5}>
         <ParallaxLayer horizontal offset={0} speed={-0.5} factor={1}>
           <div
-            className={`xl:text-8xl lg:text-6xl text-gray-500 font-extrabold w-screen`}
+            className={`text-5xl xl:text-8xl lg:text-6xl text-gray-500 font-extrabold w-screen`}
           >
             {"Things I'm crazy at..."}
           </div>
@@ -96,10 +96,13 @@ const Home: NextPage = () => {
         className={"bg-gray-900"}
       ></ParallaxLayer>
       <ParallaxLayer offset={2}></ParallaxLayer>
-      <ParallaxLayer offset={2} speed={0.7}>
-        <div className={`text-8xl text-red-400 font-extrabold mt-10 ml-20`}>
-          Coding!
-        </div>
+      <ParallaxLayer offset={2} speed={0.7} className="z-10" factor={0.2}>
+        <WiggleText
+          classOverrides={`font-extrabold mt-10 ml-20`}
+          textColor="text-red-400"
+          fontSize="text-8xl"
+          text="Coding!"
+        />
       </ParallaxLayer>
       <ParallaxLayer
         offset={2}
@@ -188,13 +191,14 @@ const Home: NextPage = () => {
       <ParallaxLayer
         offset={2.9}
         speed={0.6}
-        className={`flex flex-col justify-center`}
+        className={`z-10 flex flex-col justify-center`}
       >
-        <div
-          className={`text-8xl text-red-400 font-extrabold mt-10 ml-20 -translate-y-28`}
-        >
-          And so much more!
-        </div>
+        <WiggleText
+          classOverrides={`font-extrabold mt-10 ml-20 -translate-y-28`}
+          textColor="text-red-400"
+          fontSize="text-8xl"
+          text="More coding!"
+        />
       </ParallaxLayer>
       <ParallaxLayer offset={3} speed={1.25} className={`flex justify-center`}>
         <div className="translate-x-10 translate-y-5">
@@ -212,31 +216,58 @@ const Home: NextPage = () => {
         </div>
       </ParallaxLayer>
       <ParallaxLayer
-        offset={3}
-        speed={0.8}
-        className={`flex justify-start ml-[5%]`}
+        offset={4}
+        speed={2}
+        factor={3}
+        className={`bg-red-400`}
+      ></ParallaxLayer>
+      <ParallaxLayer
+        offset={4.2}
+        speed={2}
+        className={`ml-16 flex justify-center align-center flex-col`}
       >
-        <div
-          className={
-            "-rotate-[25deg] flex items-center flex-col group space-y-3 hover:tracking-widest hover:cursor-pointer h-5"
-          }
-          onClick={() => router.push("/raps")}
-        >
-          <div className="text-6xl font-bold text-indigo-700 group-hover:text-blue-500">
-            {"Rapping?"}
-          </div>
-          <div className="text-md font-semibold text-slate-400">
-            {"(Click me)"}
-          </div>
+        <WiggleText
+          classOverrides="text-gray-700 text-7xl font-extrabold"
+          fontSize="text-7xl"
+          textColor="text-gray-700"
+          text="Oh yeah, and..."
+        />
+        <div className="w-screen">
+          <WiggleParagraph
+            classOverrides="text-white pt-5 pr-[150px] font-bold max-w-screen-2xl space-y-8"
+            letterClassOverrides="hover:text-blue-400"
+            fontSize="text-6xl"
+            text={` Photoshop, Linux, Premiere Pro, Vim, Schematics, Audacity, FL
+            Studio, The Witcher 3?, Bluetooth Low Energy, Rapping???,
+            Basketball, I'm literally Goku, Databases, Spreadsheets, Excel,
+            Powerpoint/Google Slides, Presentations, Writing Reports, SATs,
+            ZELDA!!!!, Creativity, Driving`}
+          />
         </div>
       </ParallaxLayer>
-      <ParallaxLayer
-        offset={5}
-        speed={2}
-        className={`bg-gray-900`}
-      ></ParallaxLayer>
     </Parallax>
   );
 };
 
 export default Home;
+
+// Rapping!
+// <ParallaxLayer
+//   offset={3}
+//   speed={0.8}
+//   className={`flex justify-start ml-[5%]`}
+// >
+//   <div
+//     className={
+//       "-rotate-[25deg] flex items-center flex-col group space-y-3 hover:tracking-widest hover:cursor-pointer h-5"
+//     }
+//     onClick={() => router.push("/raps")}
+//   >
+//     <div className="text-6xl font-bold text-indigo-700 group-hover:text-blue-500">
+//       {"Rapping?"}
+//     </div>
+//     <div className="text-md font-semibold text-slate-400">
+//       {"(Click me)"}
+//     </div>
+//   </div>
+// </ParallaxLayer>
