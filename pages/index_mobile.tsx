@@ -50,8 +50,8 @@ const Home = () => {
         <div className={`text-black font-extrabold text-4xl pt-20`}>
           Quick Summary
         </div>
-        <div className={`text-gray-700 text-md font-bold`}>
-          If you had a PC, this site is a lot cooler!
+        <div className={`text-gray-700 text-sm font-bold`}>
+          If you had a bigger screen, this site is a lot cooler!
         </div>
         <div></div>
       </div>

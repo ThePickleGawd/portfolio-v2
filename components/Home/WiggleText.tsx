@@ -1,7 +1,49 @@
 import React, { useEffect, useState } from "react";
 import classnames from "classnames";
+import { text } from "node:stream/consumers";
 
 interface WiggleTextProps {
+  text: string;
+  fontSize?:
+    | "text-sm"
+    | "text-md"
+    | "text-lg"
+    | "text-xl"
+    | "text-2xl"
+    | "text-3xl"
+    | "text-4xl"
+    | "text-5xl"
+    | "text-6xl"
+    | "text-7xl"
+    | "text-8xl"
+    | "text-9xl";
+  textColor?: string;
+  classOverrides?: string;
+  letterClassOverrides?: string;
+}
+
+interface WiggleParagraphProps {
+  text: string;
+  classOverrides?: string;
+  lineClassOverrides?: string;
+  letterClassOverrides?: string;
+  textColor?: string;
+  fontSize?:
+    | "text-sm"
+    | "text-md"
+    | "text-lg"
+    | "text-xl"
+    | "text-2xl"
+    | "text-3xl"
+    | "text-4xl"
+    | "text-5xl"
+    | "text-6xl"
+    | "text-7xl"
+    | "text-8xl"
+    | "text-9xl";
+}
+
+interface WiggleLineProps {
   text: string;
   fontSize?:
     | "text-sm"
@@ -52,28 +94,58 @@ export const WiggleText = ({
 export const WiggleParagraph = ({
   text,
   classOverrides = "",
+  lineClassOverrides = "",
   letterClassOverrides = "",
   fontSize = "text-lg",
   textColor = "text-cyan-50",
-}: WiggleTextProps) => {
-  const classStr = classnames("flex relative flex-wrap", classOverrides);
+}: WiggleParagraphProps) => {
+  const classStr = classnames(
+    "flex flex-col items-center justify-center space-y-5 w-full",
+    classOverrides
+  );
 
   return (
     <div className={classStr}>
       {React.Children.toArray(
         text
-          .split("")
-          .filter((x, i, arr) => !(x === " " && arr[i - 1] === " "))
+          .split("\n")
           .map((x, i) => (
-            <WiggleLetter
+            <WiggleLine
               key={i}
-              letter={x}
-              classOverrides={letterClassOverrides}
+              text={x}
+              classOverrides={lineClassOverrides}
+              letterClassOverrides={letterClassOverrides}
               fontSize={fontSize}
               textColor={textColor}
             />
           ))
       )}
+    </div>
+  );
+};
+
+export const WiggleLine = ({
+  text = "",
+  classOverrides = "",
+  letterClassOverrides = "",
+  fontSize = "text-lg",
+  textColor = "text-cyan-50",
+}: WiggleLineProps) => {
+  const classStr = classnames("flex w-full justify-between", classOverrides);
+  return (
+    <div className={classStr}>
+      {text
+        .split("")
+        .filter((x, i, arr) => !(x === " " && arr[i - 1] === " "))
+        .map((x, i) => (
+          <WiggleLetter
+            key={i}
+            letter={x}
+            classOverrides={letterClassOverrides}
+            fontSize={fontSize}
+            textColor={textColor}
+          />
+        ))}
     </div>
   );
 };

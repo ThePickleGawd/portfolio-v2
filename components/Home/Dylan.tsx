@@ -7,7 +7,7 @@ export const Dylan = () => {
 
   return (
     <div
-      className={`flex flex-col items-center h-screen w-screen justify-center`}
+      className={`flex flex-col items-center h-screen w-screen justify-start mt-[45%] lg:justify-center lg:mt-0`}
     >
       <WiggleText
         text="Dylan Lu"
