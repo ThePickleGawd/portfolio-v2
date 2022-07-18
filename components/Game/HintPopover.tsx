@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { unityContext } from "./GameViewer";
+import { useGameContext } from "./GameViewer";
 
 const HintPopover = ({
   open,
@@ -9,12 +9,15 @@ const HintPopover = ({
   requestClose: () => void;
 }) => {
   const [hint, setHint] = useState("");
+  const { addEventListener, removeEventListener, isLoaded } = useGameContext();
 
   useEffect(() => {
-    unityContext.on("SetHint", (str: string) => {
-      setHint(str);
-    });
-  }, []);
+    if (isLoaded) addEventListener("SetHint", setHint);
+
+    return () => {
+      if (isLoaded) removeEventListener("SetHint", setHint);
+    };
+  }, [addEventListener, removeEventListener, setHint, isLoaded]);
 
   return (
     <div

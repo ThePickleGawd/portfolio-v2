@@ -6,10 +6,12 @@ import background from "../public/images/background.png";
 import background4k from "../public/images/background-4k.png";
 import GradiantButton from "../components/GradiantButton";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HintPopover from "../components/Game/HintPopover";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import { useGameContext } from "../components/Game/GameViewer";
+import { is } from "@react-spring/shared";
 
 const GameViewer = dynamic(() => import("../components/Game/GameViewer"), {
   ssr: false,
@@ -19,6 +21,12 @@ const Game = () => {
   const router = useRouter();
   const [hintHover, setHintHover] = useState(false);
   const [hintOpen, setHintOpen] = useState(false);
+
+  const { unload, isLoaded } = useGameContext();
+
+  const goBack = async () => {
+    router.back();
+  };
 
   return (
     <div
@@ -41,7 +49,7 @@ const Game = () => {
       />
       <HintPopover open={hintOpen} requestClose={() => setHintOpen(false)} />
       <div className={`absolute left-6 top-5`}>
-        <GradiantButton onClick={() => router.push("/")}>Back</GradiantButton>
+        <GradiantButton onClick={goBack}>Back</GradiantButton>
       </div>
       <div
         className={`max-w-screen-xl max-h-screen inline-block sm:w-8/12 lg:w-7/12 2xl:w-7/12 absolute bottom-5 overflow-clip mb-1`}
