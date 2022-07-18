@@ -23,6 +23,7 @@ import java from "../public/images/skills/java.png";
 import rpi from "../public/images/skills/rpi.svg";
 import vim from "../public/images/skills/vim.png";
 import Dylan from "../components/Home/Dylan";
+import StarBackground from "../components/Home/StarBackround";
 
 /*
 
@@ -38,7 +39,7 @@ const Home = () => {
 
   return (
     <Parallax
-      pages={12}
+      pages={7}
       className={`bg-cyan-50 relative dark scrollbar hidden lg:block`}
       ref={parallaxRef}
     >
@@ -50,6 +51,7 @@ const Home = () => {
         />
       </Head>
       <ParallaxLayer speed={1.5} className={"bg-black flex justify-center"}>
+        <StarBackground />
         <div
           className={`text-slate-500 text-lg absolute bottom-5 tracking-widest`}
         >
@@ -133,7 +135,6 @@ const Home = () => {
           <Image src={typescript} alt="typescript" width={175} height={175} />
         </div>
       </ParallaxLayer>
-
       <ParallaxLayer offset={2} speed={1.2} className={``}>
         <div
           className={`absolute right-36 lg:right-52 xl:right-64 bottom-96 ${iconSizeBreakpoints}`}
@@ -222,7 +223,7 @@ const Home = () => {
             classOverrides={`font-extrabold`}
             letterClassOverrides={`text-blue-300 hover:text-blue-400 xl:text-7xl`}
             fontSize="text-5xl"
-            text={`More things that I'm insane at...`}
+            text={`Literally everything...`}
           />
           <WiggleParagraph
             classOverrides="text-white font-semibold "
@@ -245,6 +246,26 @@ const Home = () => {
             on the first play of the game`}
           />
         </div>
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={5.5}
+        speed={0.6}
+        className={`z-10 flex flex-col justify-center`}
+      >
+        <WiggleText
+          classOverrides={`font-extrabold mt-10 ml-20 -translate-y-28`}
+          textColor="text-gray-500"
+          fontSize="text-8xl"
+          text="Let's play a game!"
+        />
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={6}
+        speed={2}
+        className={`bg-slate-700`}
+      ></ParallaxLayer>
+      <ParallaxLayer offset={6} speed={1} className={`bg-slate-700`}>
+        <div></div>
       </ParallaxLayer>
     </Parallax>
   );
