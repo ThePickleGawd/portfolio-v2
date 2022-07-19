@@ -50,7 +50,7 @@ const Home = () => {
           content="The second iteration of my portfolio"
         />
       </Head>
-      <ParallaxLayer speed={1.5} className={"bg-black flex justify-center"}>
+      <ParallaxLayer speed={1.5} className={"flex justify-center"}>
         <StarBackground />
         <div
           className={`text-slate-500 text-lg absolute bottom-5 tracking-widest`}
@@ -199,7 +199,7 @@ const Home = () => {
         offset={4}
         speed={1.5}
         factor={2}
-        className={`bg-red-400`}
+        className={`bg-gradient-to-r from-violet-500 to-fuchsia-500`}
       ></ParallaxLayer>
       <ParallaxLayer
         offset={3.2}
