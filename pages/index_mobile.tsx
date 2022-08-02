@@ -23,6 +23,8 @@ import java from "../public/images/skills/java.png";
 import rpi from "../public/images/skills/rpi.svg";
 import vim from "../public/images/skills/vim.png";
 import Dylan from "../components/Home/Dylan";
+import StarBackground from "../components/Home/StarBackround";
+import Link from "next/link";
 
 /*
 
@@ -48,12 +50,20 @@ const Home = () => {
         className={`h-screen w-screen bg-cyan-50 flex flex-col items-center space-y-2`}
       >
         <div className={`text-black font-extrabold text-4xl pt-20`}>
-          Quick Summary
+          So Sad!
         </div>
-        <div className={`text-gray-700 text-sm font-bold`}>
+        <div className={`text-gray-700 text-md font-bold text-center`}>
           If you had a bigger screen, this site is a lot cooler!
         </div>
-        <div></div>
+        <div className={"flex-1 flex justify-center items-center"}>
+          TODO: insert crying picture
+        </div>
+        <div className={"h-10"}>
+          In the meantime, checkout my{" "}
+          <a href="raps" className="text-cyan-500">
+            raps!
+          </a>
+        </div>
       </div>
     </div>
   );

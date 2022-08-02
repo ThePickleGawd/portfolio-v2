@@ -11,7 +11,7 @@ export const Dylan = () => {
     >
       <WiggleText
         text="Dylan Lu"
-        fontSize="text-5xl"
+        fontSize="text-6xl"
         textColor="text-slate-300"
         letterClassOverrides="hover:bg-gradient-to-r hover:text-transparent from-sky-500 to-indigo-500 bg-clip-text -mb-4 font-extrabold lg:text-9xl"
       />
@@ -28,7 +28,11 @@ export const Dylan = () => {
         <GradiantButton onClick={() => router.push("/resume.pdf")}>
           Resume
         </GradiantButton>
-        <GradiantButton onClick={() => router.push("/game")} secondary>
+        <GradiantButton
+          onClick={() => router.push("/game")}
+          secondary
+          className="hidden sm:inline-flex"
+        >
           Game
         </GradiantButton>
       </div>
