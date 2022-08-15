@@ -50,8 +50,10 @@ const Home = () => {
           content="The second iteration of my portfolio"
         />
       </Head>
-      <ParallaxLayer speed={1.5} className={"flex justify-center"}>
+      <ParallaxLayer factor={7}>
         <StarBackground />
+      </ParallaxLayer>
+      <ParallaxLayer speed={1.5} className={"flex justify-center"}>
         <div
           className={`text-slate-500 text-lg absolute bottom-5 tracking-widest`}
         >
@@ -64,19 +66,12 @@ const Home = () => {
       <ParallaxLayer offset={1} speed={0.5} factor={0.5}>
         <ParallaxLayer horizontal offset={0} speed={-0.5} factor={1}>
           <div
-            className={`text-5xl xl:text-8xl lg:text-6xl text-gray-500 font-extrabold w-screen`}
+            className={`text-5xl xl:text-8xl lg:text-6xl text-gray-400 font-extrabold w-screen`}
           >
             {"Things I'm crazy at..."}
           </div>
         </ParallaxLayer>
       </ParallaxLayer>
-      <ParallaxLayer
-        offset={1.9}
-        speed={2}
-        factor={5.5}
-        className={"bg-gray-900"}
-      ></ParallaxLayer>
-      <ParallaxLayer offset={2}></ParallaxLayer>
       <ParallaxLayer offset={2} speed={0.7} className="z-10" factor={0.2}>
         <WiggleText
           classOverrides={`font-extrabold mt-10 ml-20`}
@@ -158,7 +153,7 @@ const Home = () => {
         <div
           className={`text-5xl lg:text-7xl text-purple-400 font-extrabold absolute bottom-28`}
         >
-          Firmware
+          Low Level
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={1.8} className={``}>
@@ -196,19 +191,13 @@ const Home = () => {
         </div>
       </ParallaxLayer>
       <ParallaxLayer
-        offset={4}
-        speed={1.5}
-        factor={2}
-        className={`bg-gradient-to-r from-violet-500 to-fuchsia-500`}
-      ></ParallaxLayer>
-      <ParallaxLayer
         offset={3.2}
         speed={0.6}
         className={`z-10 flex flex-col justify-end`}
       >
         <WiggleText
           classOverrides={`font-extrabold mt-10 ml-20 -translate-y-28`}
-          textColor="text-gray-500"
+          textColor="text-gray-400"
           fontSize="text-8xl"
           text="Oh yeah, and..."
         />
@@ -218,16 +207,18 @@ const Home = () => {
         speed={1}
         className={`flex justify-center items-center flex-col`}
       >
-        <div className="flex flex-col justify-center items-center w-screen bg-slate-500 rounded-xl max-w-screen-2xl p-24">
+        <div className="flex flex-col justify-center items-center w-screenrounded-xl max-w-screen-2xl p-24 skew-y-12">
           <WiggleText
             classOverrides={`font-extrabold`}
-            letterClassOverrides={`text-blue-300 hover:text-blue-400 xl:text-7xl`}
+            letterClassOverrides={`hover:text-yellow-300 xl:text-7xl`}
+            textColor={"text-yellow-400"}
             fontSize="text-5xl"
-            text={`Literally everything...`}
+            text={`All of these!`}
           />
           <WiggleParagraph
-            classOverrides="text-white font-semibold "
-            letterClassOverrides="hover:text-blue-400 xl:text-5xl"
+            classOverrides="font-semibold"
+            letterClassOverrides="hover:text-yellow-300 xl:text-5xl"
+            textColor="text-yellow-400"
             fontSize="text-3xl"
             text={`
             Photoshop, Linux, Vim, Schematics, Audacity
