@@ -15,7 +15,8 @@ export const useGameContext = () => {
 
 const GameViewer = () => {
   const router = useRouter();
-  const { unityProvider, unload, isLoaded } = useGameContext();
+  const { unityProvider, unload, isLoaded, loadingProgression } =
+    useGameContext();
   const [unloaded, setUnloaded] = useState(false);
 
   useEffect(() => {
@@ -27,17 +28,14 @@ const GameViewer = () => {
     };
 
     Router.beforePopState(({ as }) => {
-      console.log("BRO WHAT?!?");
       if (!isLoaded || unloaded) return true;
 
       if (as !== router.asPath) {
         // Will run when leaving the current page; on back/forward actions
         // Add your logic here, like toggling the modal state
 
-        console.log("hi");
         unloadBruh();
       }
-      console.log("noo");
       return false;
     });
 
@@ -48,6 +46,11 @@ const GameViewer = () => {
 
   return (
     <div className={`w-full h-full bg-black`}>
+      {!isLoaded && (
+        <div className={`text-white text-2xl font-semibold p-10`}>
+          Loading... {loadingProgression * 100}%
+        </div>
+      )}
       <Unity unityProvider={unityProvider} className={`w-full h-full`} />
     </div>
   );
