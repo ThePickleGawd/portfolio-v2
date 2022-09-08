@@ -58,12 +58,6 @@ const Home = () => {
         <div className={"flex-1 flex justify-center items-center"}>
           TODO: insert crying picture
         </div>
-        <div className={"h-10"}>
-          In the meantime, checkout my{" "}
-          <a href="raps" className="text-cyan-500">
-            raps!
-          </a>
-        </div>
       </div>
     </div>
   );

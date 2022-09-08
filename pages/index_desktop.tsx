@@ -24,6 +24,7 @@ import rpi from "../public/images/skills/rpi.svg";
 import vim from "../public/images/skills/vim.png";
 import Dylan from "../components/Home/Dylan";
 import StarBackground from "../components/Home/StarBackround";
+import Link from "next/link";
 
 /*
 
@@ -39,7 +40,7 @@ const Home = () => {
 
   return (
     <Parallax
-      pages={7}
+      pages={6}
       className={`bg-cyan-50 relative dark scrollbar hidden lg:block`}
       ref={parallaxRef}
     >
@@ -243,20 +244,11 @@ const Home = () => {
         speed={0.6}
         className={`z-10 flex flex-col justify-center`}
       >
-        <WiggleText
-          classOverrides={`font-extrabold mt-10 ml-20 -translate-y-28`}
-          textColor="text-gray-500"
-          fontSize="text-8xl"
-          text="Let's play a game!"
-        />
-      </ParallaxLayer>
-      <ParallaxLayer
-        offset={6}
-        speed={2}
-        className={`bg-slate-700`}
-      ></ParallaxLayer>
-      <ParallaxLayer offset={6} speed={1} className={`bg-slate-700`}>
-        <div></div>
+        <div className="font-extrabold mt-10 ml-20 -translate-y-28 text-5xl text-blue-500">
+          <Link href="https://v1.dylanlu.com">
+            Wanna see the older version?
+          </Link>
+        </div>
       </ParallaxLayer>
     </Parallax>
   );
