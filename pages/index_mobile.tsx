@@ -26,6 +26,9 @@ import Dylan from "../components/Home/Dylan";
 import StarBackground from "../components/Home/StarBackround";
 import Link from "next/link";
 
+const stars =
+  "https://raw.githubusercontent.com/ThePickleGawd/portfolio/main/public/icons/stars.svg";
+
 /*
 
 Raps Page:
@@ -37,7 +40,10 @@ const Home = () => {
   const router = useRouter();
 
   return (
-    <div className={`relative dark overflow-x-hidden block lg:hidden bg-black`}>
+    <div
+      className={`relative dark overflow-x-hidden block lg:hidden bg-black`}
+      style={{ backgroundImage: `url(${stars})`, backgroundSize: "contain" }}
+    >
       <Head>
         <title>Dylan Lu | Portfolio V2</title>
         <meta
@@ -46,17 +52,31 @@ const Home = () => {
         />
       </Head>
       <Dylan />
-      <div
-        className={`h-screen w-screen bg-cyan-50 flex flex-col items-center space-y-2`}
-      >
-        <div className={`text-black font-extrabold text-4xl pt-20`}>
-          So Sad!
+      <div className={`h-screen w-screen flex flex-col items-center space-y-2`}>
+        <div className={`text-white font-extrabold text-4xl pt-20`}>
+          Psst...
         </div>
-        <div className={`text-gray-700 text-md font-bold text-center`}>
-          If you had a bigger screen, this site is a lot cooler!
+        <div className={`text-gray-400 text-md font-bold text-center`}>
+          Check this site out on a computer silly!
         </div>
-        <div className={"flex-1 flex justify-center items-center"}>
-          TODO: insert crying picture
+        <div className={`px-2 py-24 m-5 flex flex-col`}>
+          <div className="text-white font-extrabold text-xl">Quick summary</div>
+          <div className="flex flex-col space-y-3 mt-3">
+            {[
+              "I can code and develop things",
+              "I'm crazy at sports and rapping",
+              "Like seriously, you should hire me!",
+            ].map((skill) => {
+              return (
+                <div
+                  className={`text-blue-400 bg-gray-800 p-4 rounded-lg text-md font-bold`}
+                  key={skill}
+                >
+                  {skill}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
