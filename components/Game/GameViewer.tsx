@@ -48,7 +48,7 @@ const GameViewer = () => {
     <div className={`w-full h-full bg-black`}>
       {!isLoaded && (
         <div className={`text-white text-2xl font-semibold p-10`}>
-          Loading... {loadingProgression * 100}%
+          Loading... {(loadingProgression * 100).toPrecision(3)}%
         </div>
       )}
       <Unity unityProvider={unityProvider} className={`w-full h-full`} />

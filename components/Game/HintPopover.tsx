@@ -8,7 +8,7 @@ const HintPopover = ({
   open: boolean;
   requestClose: () => void;
 }) => {
-  const [hint, setHint] = useState("");
+  const [hint, setHint] = useState("No hint for this section!");
   const { addEventListener, removeEventListener, isLoaded } = useGameContext();
 
   useEffect(() => {

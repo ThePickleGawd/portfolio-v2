@@ -89,7 +89,7 @@ const Home = () => {
         <div
           className={`translate-x-[100px] xl:translate-y-[80px] translate-y-[160px] ${iconSizeBreakpoints}`}
         >
-          <Image src={c} alt="c" width={250} height={260} />
+          <Image priority src={c} alt="c" width={250} height={260} />
         </div>
       </ParallaxLayer>
       <ParallaxLayer
@@ -100,47 +100,59 @@ const Home = () => {
         <div
           className={`2xl:-translate-x-[140px] xl:-translate-x-[90px] ${iconSizeBreakpoints}`}
         >
-          <Image src={cpp} alt="cpp" width={175} height={200} />
+          <Image priority src={cpp} alt="cpp" width={175} height={200} />
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={1.2} className={``}>
         <div
           className={`absolute left-64 bottom-[475px] hover:bg-blue-500 ${iconSizeBreakpoints}`}
         >
-          <Image src={react} alt="react" width={200} height={200} />
+          <Image priority src={react} alt="react" width={200} height={200} />
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={0.8} className={``}>
         <div
           className={`absolute left-1 bottom-[220px] ${iconSizeBreakpoints}`}
         >
-          <Image src={next} alt="next" width={300} height={150} />
+          <Image priority src={next} alt="next" width={300} height={150} />
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={1.5} className={``}>
         <div
           className={`absolute left-10 bottom-[450px] ${iconSizeBreakpoints}`}
         >
-          <Image src={javascript} alt="javascript" width={175} height={175} />
+          <Image
+            priority
+            src={javascript}
+            alt="javascript"
+            width={175}
+            height={175}
+          />
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={0.8} className={``}>
         <div
           className={`absolute 2xl:left-96 left-64 bottom-[220px] ${iconSizeBreakpoints}`}
         >
-          <Image src={typescript} alt="typescript" width={175} height={175} />
+          <Image
+            priority
+            src={typescript}
+            alt="typescript"
+            width={175}
+            height={175}
+          />
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={1.2} className={``}>
         <div
           className={`absolute right-36 lg:right-52 xl:right-64 bottom-96 ${iconSizeBreakpoints}`}
         >
-          <Image src={unity} alt="unity" width={300} height={300} />
+          <Image priority src={unity} alt="unity" width={300} height={300} />
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={0.75} className={``}>
         <div className={`absolute right-1 bottom-64 ${iconSizeBreakpoints}`}>
-          <Image src={cs} alt="cs" width={250} height={250} />
+          <Image priority src={cs} alt="cs" width={250} height={250} />
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={1.2} className={``}>
@@ -178,17 +190,17 @@ const Home = () => {
       </ParallaxLayer>
       <ParallaxLayer offset={3} speed={1.25} className={`flex justify-center`}>
         <div className="translate-x-10 translate-y-5">
-          <Image src={python} alt="python" width={250} height={250} />
+          <Image priority src={python} alt="python" width={250} height={250} />
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={3} speed={1.4} className={`flex justify-center`}>
         <div className="-translate-x-64 -translate-y-32">
-          <Image src={java} alt="java" width={250} height={250} />
+          <Image priority src={java} alt="java" width={250} height={250} />
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={3} speed={1.2} className={`flex justify-center`}>
         <div className="translate-x-80 -translate-y-52">
-          <Image src={rpi} alt="rpi" width={200} height={260} />
+          <Image priority src={rpi} alt="rpi" width={200} height={260} />
         </div>
       </ParallaxLayer>
       <ParallaxLayer

@@ -10,21 +10,7 @@ import ProjectCard from "../components/Home/ProjectCard";
 import Head from "next/head";
 
 // Images
-import cpp from "../public/images/skills/cpp.png";
-import c from "../public/images/skills/c.png";
-import javascript from "../public/images/skills/javascript.png";
-import typescript from "../public/images/skills/typescript.png";
-import python from "../public/images/skills/python.png";
-import next from "../public/images/skills/next.png";
-import react from "../public/images/skills/react.png";
-import unity from "../public/images/skills/unity.png";
-import cs from "../public/images/skills/cs.png";
-import java from "../public/images/skills/java.png";
-import rpi from "../public/images/skills/rpi.svg";
-import vim from "../public/images/skills/vim.png";
 import Dylan from "../components/Home/Dylan";
-import StarBackground from "../components/Home/StarBackround";
-import Link from "next/link";
 
 const stars =
   "https://raw.githubusercontent.com/ThePickleGawd/portfolio/main/public/icons/stars.svg";
