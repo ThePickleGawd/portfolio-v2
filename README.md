@@ -15,4 +15,4 @@ I'm hosting on Vercel so it will automatically update when I push to GitHub.
 
 The game is developed in Unity (called "Portfolio Game"). To deploy, run a WebGl build and copy the content into the `/public/gameBuild` folder.
 
-// TODO: insert image here
+![Build Settings](https://raw.githubusercontent.com/ThePickleGawd/portfolio-v2/main/public/images/readme/unity-webgl-build-settings.png?token=GHSAT0AAAAAAB37U2T5B37ZS7YEKDAPZ26QZGZOFXQ)
