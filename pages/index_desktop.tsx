@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import ProjectCard from "../components/Home/ProjectCard";
 import Head from "next/head";
+import Navbar from "../components/Home/Navbar";
 
 // Images
 import cpp from "../public/images/skills/cpp.png";
@@ -51,9 +52,11 @@ const Home = () => {
           content="The second iteration of my portfolio"
         />
       </Head>
+      <Navbar />
       <ParallaxLayer factor={7}>
         <StarBackground />
       </ParallaxLayer>
+
       <ParallaxLayer speed={1.5} className={"flex justify-center"}>
         <div
           className={`text-slate-500 text-lg absolute bottom-5 tracking-widest`}
