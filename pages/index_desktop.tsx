@@ -237,18 +237,18 @@ const Home = () => {
             textColor="text-yellow-400"
             fontSize="text-3xl"
             text={`
-            Photoshop, Linux, Vim, Schematics, Audacity
-            FL Studio, The Witcher 3?, Bluetooth Low Energy, 
-            Rapping???, Basketball, I'm literally Goku, 
-            Databases, Spreadsheets, Excel, Powerpoint,
-            Google Slides, Presentations, Writing Reports, 
-            SATs, ZELDA, Creativity, Driving, Leetcode, 
+            Photoshop, Linux, Vim, Schematics, Audacity,
+            FL Studio, Elden Ring?, Bluetooth Low Energy, 
+            Rapping???, Basketball, Being like Goku, 
+            Databases, NumPy, PyTorch, Writing Essays,
+            GitHub, Giving Great Presentations,
+            SATs, ZELDA, Creativity, Leetcode, 
             Trying to run a sub 5 mile, ChemH, 
-            Building computers, Being sexy, Golf,
+            Building computers, Training AI, Golf,
             Premiere Pro, After Effects, 
             Clearly not very good UI,
             Music videos, Scoring toudies, 
-            USACO, Listening to music, 
+            USACO, Reading Books, 
             Scoring an 80 yard kickoff return TD 
             on the first play of the game`}
           />
