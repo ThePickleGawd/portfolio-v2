@@ -169,7 +169,7 @@ const Home = () => {
         <div
           className={`text-5xl lg:text-7xl text-purple-400 font-extrabold absolute bottom-28`}
         >
-          Low Level
+          Embedded
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={1.8} className={``}>
@@ -237,24 +237,19 @@ const Home = () => {
             textColor="text-yellow-400"
             fontSize="text-3xl"
             text={`
-            Photoshop, Linux, Vim, Schematics, Audacity,
-            FL Studio, Elden Ring?, Bluetooth Low Energy, 
-            Rapping???, Basketball, Being like Goku, 
-            Databases, NumPy, PyTorch, Writing Essays,
-            GitHub, Giving Great Presentations,
-            SATs, ZELDA, Creativity, Leetcode, 
-            Trying to run a sub 5 mile, ChemH, 
-            Building computers, Training AI, Golf,
-            Premiere Pro, After Effects, 
-            Clearly not very good UI,
-            Music videos, Scoring toudies, 
-            USACO, Reading Books, 
-            Scoring an 80 yard kickoff return TD 
-            on the first play of the game`}
+            Linux, Tensorflow, Photoshop, NumPy
+            Audacity, FFmpeg, Bluetooth Low Energy,
+            Databases, Linux, PyTorch, Deep Learning,
+            Full-stack, TailwindCSS, Node.js,
+            Golf, VR Games, Vim, Elden Ring,
+            Basketball, GitHub, Leetcode,
+            Premiere Pro, After Effects, Reading,
+            Making presentations, GitHub, Football,
+            Scoring an 80 yard touchdown...`}
           />
         </div>
       </ParallaxLayer>
-      <ParallaxLayer
+      {/* <ParallaxLayer
         offset={5.5}
         speed={0.6}
         className={`z-10 flex flex-col justify-center`}
@@ -264,7 +259,7 @@ const Home = () => {
             Wanna see the older version?
           </Link>
         </div>
-      </ParallaxLayer>
+      </ParallaxLayer> */}
     </Parallax>
   );
 };

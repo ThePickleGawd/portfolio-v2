@@ -38,31 +38,14 @@ const Home = () => {
         />
       </Head>
       <Dylan />
-      <div className={`h-screen w-screen flex flex-col items-center space-y-2`}>
+      <div
+        className={`h-screen w-screen flex flex-col items-center justify-start space-y-2`}
+      >
         <div className={`text-white font-extrabold text-4xl pt-20`}>
           Psst...
         </div>
-        <div className={`text-gray-400 text-md font-bold text-center`}>
-          Check this site out on a computer silly!
-        </div>
-        <div className={`px-2 py-24 m-5 flex flex-col`}>
-          <div className="text-white font-extrabold text-xl">Quick summary</div>
-          <div className="flex flex-col space-y-3 mt-3">
-            {[
-              "I can code and develop things",
-              "I'm crazy at sports and rapping",
-              "Like seriously, you should hire me!",
-            ].map((skill) => {
-              return (
-                <div
-                  className={`text-blue-400 bg-gray-800 p-4 rounded-lg text-md font-bold`}
-                  key={skill}
-                >
-                  {skill}
-                </div>
-              );
-            })}
-          </div>
+        <div className="text-white font-extrabold text-xl pt-2">
+          View this site on a desktop
         </div>
       </div>
     </div>
