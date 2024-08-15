@@ -9,6 +9,8 @@ import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import ProjectCard from "../components/Home/ProjectCard";
 import Head from "next/head";
 import Navbar from "../components/Home/Navbar";
+import { SocialIcon } from "react-social-icons";
+import EmailClipboardCard from "../components/Home/EmailClipboardCard";
 
 // Images
 import cpp from "../public/images/skills/cpp.png";
@@ -249,6 +251,28 @@ const Home = () => {
           />
         </div>
       </ParallaxLayer>
+
+      <ParallaxLayer
+        offset={5.5}
+        speed={0.6}
+        className={`z-10 flex flex-col justify-center`}
+      >
+        <div className="mt-10 ml-20 -translate-y-36 flex flex-col space-y-4">
+          <WiggleText
+            fontSize="text-5xl"
+            textColor="text-blue-500"
+            classOverrides="font-extrabold"
+            text="Let's connect"
+          />
+          <div className="flex items-center justify-start space-x-4">
+            <EmailClipboardCard />
+            <div />
+            <SocialIcon url="https://www.linkedin.com/in/dylanelu/" />
+            <SocialIcon url="https://github.com/ThePickleGawd" />
+            <SocialIcon url="https://www.instagram.com/_dylan_lu/" />
+          </div>
+        </div>
+      </ParallaxLayer>
       {/* <ParallaxLayer
         offset={5.5}
         speed={0.6}
@@ -265,24 +289,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// Rapping!
-// <ParallaxLayer
-//   offset={3}
-//   speed={0.8}
-//   className={`flex justify-start ml-[5%]`}
-// >
-//   <div
-//     className={
-//       "-rotate-[25deg] flex items-center flex-col group space-y-3 hover:tracking-widest hover:cursor-pointer h-5"
-//     }
-//     onClick={() => router.push("/raps")}
-//   >
-//     <div className="text-6xl font-bold text-indigo-700 group-hover:text-blue-500">
-//       {"Rapping?"}
-//     </div>
-//     <div className="text-md font-semibold text-slate-400">
-//       {"(Click me)"}
-//     </div>
-//   </div>
-// </ParallaxLayer>
