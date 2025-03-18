@@ -25,7 +25,7 @@ export const Dylan = () => {
       <div
         className={`flex space-x-6 justify-center items-center lg:-translate-x-[60px]`}
       >
-        <GradiantButton onClick={() => router.push("/resume.pdf")}>
+        <GradiantButton onClick={() => router.push("/dylan-lu-resume.pdf")}>
           Resume
         </GradiantButton>
         <GradiantButton
